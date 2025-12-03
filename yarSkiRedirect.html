@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YarSkiRedirect</title>
+</head>
+
+<body>
+    <div id="buttons">
+
+    </div>
+    <script>
+        function getOS() {
+            return navigator.userAgent || navigator.vendor || navigator.opera;
+        }
+
+        let os = getOS();
+        switch (os) {
+            case 'iOS': window.location.href('https://apps.apple.com/');
+                break;
+            case 'Android': window.location.href('https://apps.apple.com/');
+                break;
+            default:
+                document.getElementById('buttons').innerHTML = `
+                 <a href="https://apps.apple.com/" class="store-btn ios">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                `
+        }
+    </script>
+</body>
+
+</html>
